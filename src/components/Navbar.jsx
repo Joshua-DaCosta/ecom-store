@@ -3,6 +3,8 @@ import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+
 
 const Container = styled.div`
   height: 60px;
@@ -78,16 +80,22 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>LAMA.</Logo>
+          <Logo>ECOM</Logo>
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
-          <MenuItem>
-            <Badge badgeContent={4} color="primary">
-              <ShoppingCartOutlined />
-            </Badge>
-          </MenuItem>
+          <NavLink to={"/register"}>
+            <MenuItem>REGISTER</MenuItem>
+          </NavLink>
+          <NavLink to={"/login"}>
+            <MenuItem>SIGN IN</MenuItem>
+          </NavLink>
+          <NavLink to={"/cart"}>
+            <MenuItem>
+              <Badge badgeContent={4} color="primary">
+                <ShoppingCartOutlined />
+              </Badge>
+            </MenuItem>
+          </NavLink>
         </Right>
       </Wrapper>
     </Container>
