@@ -7,16 +7,16 @@ import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
 import Slider from "../components/Slider";
 
-const Home = () => {
+const Home = ({allProducts}) => {
   return (
     <div>
       <Announcement />
       <Navbar />
       <Slider />
       <Categories />
-      <Products/>
-      <Newsletter/>
-      <Footer/>
+      <Products allProducts={allProducts} />
+      <Newsletter />
+      <Footer />
     </div>
   );
 };

@@ -47,7 +47,8 @@ const Circle = styled.div`
 `;
 
 const Image = styled.img`
-  height: 75%;
+  height: 60%;
+  width: 60%;
   z-index: 2;
 `;
 
@@ -67,11 +68,11 @@ const Icon = styled.div`
   }
 `;
 
-const Product = ({ item }) => {
+const Product = ({img, key}) => {
   return (
-    <Container>
+    <Container id={key}>
       <Circle />
-      <Image src={item.img} alt={item.alt} />
+      <Image src={img}/>
       <Info>
         <Link to={"/cart"}>
           <Icon>

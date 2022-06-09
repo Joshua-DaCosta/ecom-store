@@ -6,8 +6,28 @@ import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { Route } from "react-router-dom";
+import { ImportExportOutlined } from "@material-ui/icons";
+import { useEffect, useState } from "react";
 
 const App = () => {
+
+  const [allProducts, setAllProducts] = useState([]);
+  console.log(allProducts);
+
+
+  useEffect( () => {
+    const fetchData = async () => {
+      const data = await fetch("https://fakestoreapi.com/products")
+        .then((res) => res.json())
+        .then((json) => setAllProducts(json));
+    }
+    try {
+      fetchData();
+    } catch (error) {
+      console.log(error.message);
+    }
+  }, [])
+  
   return (
     <Router>
       <Switch>
@@ -27,7 +47,7 @@ const App = () => {
           <Cart />
         </Route>
         <Route path={"/"}>
-          <Home />
+          <Home allProducts={allProducts} />
         </Route>
       </Switch>
     </Router>
