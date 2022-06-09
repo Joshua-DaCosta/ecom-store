@@ -154,6 +154,9 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
+  
+ window.scrollTo(0, 0);
+
   return (
     <Container>
       <Navbar />

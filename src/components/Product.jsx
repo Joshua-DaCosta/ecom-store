@@ -5,6 +5,7 @@ import {
 } from "@material-ui/icons";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 
 const Info = styled.div`
   opacity: 0;
@@ -69,6 +70,8 @@ const Icon = styled.div`
 `;
 
 const Product = ({img, key}) => {
+
+  
   return (
     <Container id={key}>
       <Circle />
@@ -84,8 +87,8 @@ const Product = ({img, key}) => {
             <SearchOutlined style={{ color: "black" }} />
           </Icon>
         </Link>
-        <Link>
-          <Icon to={"/product"}>
+        <Link to={"/product"} >
+          <Icon>
             <FavoriteBorderOutlined style={{ color: "black" }} />
           </Icon>
         </Link>

@@ -1,4 +1,5 @@
 import { Add, Remove } from "@material-ui/icons";
+import { useEffect } from "react";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -116,6 +117,9 @@ const Button = styled.button`
 `;
 
 const Product = () => {
+
+ window.scrollTo(0, 0);
+ 
   return (
     <Container>
       <Navbar />
