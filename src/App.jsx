@@ -6,9 +6,8 @@ import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { Route } from "react-router-dom";
-import { ImportExportOutlined } from "@material-ui/icons";
 import { useEffect, useState } from "react";
-import { fetchAllProducts, fetchJewelery } from "./api";
+import { fetchAllProducts} from "./api";
 
 const App = () => {
 
@@ -33,7 +32,7 @@ const App = () => {
         <Route path={"/login"}>
           <Login />
         </Route>
-        <Route path={"/product-list"}>
+        <Route path={"/products"}>
           <ProductList />
         </Route>
         <Route path={"/product"}>

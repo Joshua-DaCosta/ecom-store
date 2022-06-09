@@ -72,20 +72,20 @@ const Product = ({img, key}) => {
   return (
     <Container id={key}>
       <Circle />
-      <Image src={img}/>
+      <Image src={img} />
       <Info>
         <Link to={"/cart"}>
           <Icon>
             <ShoppingCartOutlined style={{ color: "black" }} />
           </Icon>
         </Link>
-        <Link to={"/product-list"}>
+        <Link to={"/product"}>
           <Icon>
             <SearchOutlined style={{ color: "black" }} />
           </Icon>
         </Link>
         <Link>
-          <Icon>
+          <Icon to={"/product"}>
             <FavoriteBorderOutlined style={{ color: "black" }} />
           </Icon>
         </Link>
