@@ -8,21 +8,17 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { Route } from "react-router-dom";
 import { ImportExportOutlined } from "@material-ui/icons";
 import { useEffect, useState } from "react";
+import { fetchAllProducts, fetchJewelery } from "./api";
 
 const App = () => {
 
   const [allProducts, setAllProducts] = useState([]);
-  console.log(allProducts);
+
 
 
   useEffect( () => {
-    const fetchData = async () => {
-      const data = await fetch("https://fakestoreapi.com/products")
-        .then((res) => res.json())
-        .then((json) => setAllProducts(json));
-    }
     try {
-      fetchData();
+      fetchAllProducts(setAllProducts);
     } catch (error) {
       console.log(error.message);
     }
