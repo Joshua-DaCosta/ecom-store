@@ -5,7 +5,6 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
-
 const Container = styled.div`
   height: 60px;
   ${mobile({ height: "50px" })}
@@ -41,6 +40,7 @@ const SearchContainer = styled.div`
 
 const Input = styled.input`
   border: none;
+  outline: none;
   ${mobile({ width: "50px" })}
 `;
 
@@ -65,6 +65,7 @@ const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
+  color: black;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
@@ -91,7 +92,7 @@ const Navbar = () => {
           </NavLink>
           <NavLink to={"/cart"}>
             <MenuItem>
-              <Badge badgeContent={4} color="primary">
+              <Badge badgeContent={4} color="secondary">
                 <ShoppingCartOutlined />
               </Badge>
             </MenuItem>
